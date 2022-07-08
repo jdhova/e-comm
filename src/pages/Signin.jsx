@@ -5,7 +5,7 @@ import { UserAuth } from '../context/AuthContext'
 // import FacebookLogin from 'react-facebook-login';
 
 export const Signin = () => {
-    const { googleSignIn, user } = UserAuth();
+    const { googleSignIn } = UserAuth();
 
     const handleGoogleSignIn = async () => {
         try {

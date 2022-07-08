@@ -11,8 +11,8 @@ function App() {
     <Router> 
     <div className="App">
     <header className="App-header"></header>
-    <Nav />
-      <AuthContextProvider>
+    <AuthContextProvider>
+      <Nav />
         <Routes> 
               <Route path="/" element={ <Home />} />
               <Route path="/signin" element={ <Signin />} />

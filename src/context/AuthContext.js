@@ -1,6 +1,5 @@
 import { useContext,createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider,
-        signInWithPopup,
         signInWithRedirect,
         signOut,
         onAuthStateChanged
@@ -20,7 +19,9 @@ export const AuthContextProvider = ({children}) => {
   };
 
   const logOut = () => {
+      console.log('im out')
     signOut(auth)
+    console.log('im out 2')
 }
 
   useEffect(() => {
