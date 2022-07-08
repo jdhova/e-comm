@@ -1,8 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import  Nav  from './pages/components/Nav';
-import { Signin } from './pages/Signin';
-import Signout from './pages/Signout';
+import {Signin} from './pages/Signin';
+// import Signout from './pages/Signout';
+import Dashboard from './pages/Dashboard';
 import Home from './pages/components/Home';
 import { AuthContextProvider } from './context/AuthContext';
 
@@ -16,7 +17,8 @@ function App() {
         <Routes> 
               <Route path="/" element={ <Home />} />
               <Route path="/signin" element={ <Signin />} />
-              <Route path="/signout" element={ <Signout />} />
+              {/* <Route path="/signout" element={ <Signout />} /> */}
+              <Route path="/dashboard" element={ <Dashboard />} />
         </Routes>
       </AuthContextProvider>
     </div>

@@ -1,11 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import GoogleButton from 'react-google-button'
 import { UserAuth } from '../context/AuthContext'
+import { useNavigate } from 'react-router-dom';
+
 
 // import FacebookLogin from 'react-facebook-login';
 
 export const Signin = () => {
-    const { googleSignIn } = UserAuth();
+    const { googleSignIn,user } = UserAuth();
+    const navigate = useNavigate();
 
     const handleGoogleSignIn = async () => {
         try {
@@ -15,6 +18,12 @@ export const Signin = () => {
           console.log('here', error);
         }
       };
+
+      useEffect(() => {
+        if (user != null ) {
+          navigate('/dashboard');
+        }
+      }, [user]);
 
   return (
     <div className='gbutton'>
