@@ -2,7 +2,7 @@ import { Button } from 'react-bootstrap';
 import { UserAuth } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom';
 import { useState,useEffect } from 'react';
- import { collection, doc, getDocs,addDoc } from 'firebase/firestore';
+ import { collection, getDocs,addDoc } from 'firebase/firestore';
 import { db } from "../firebase"
 
 
@@ -39,9 +39,9 @@ const Dashboard = () => {
     const handleSignOut = async () => {
       try {
         await logOut();
-        navigate('/home');
+        navigate('/');
       } catch (error) {
-        console.log(error);
+      
       }
     };
     
@@ -67,13 +67,13 @@ const Dashboard = () => {
 
   return (
     
-      <>
-     <h3> Welcome to {user.displayName}s'Dash Board</h3>
-        Good Day 
-        <br></br>
-         {user.displayName}  its {today}{check()}
-         <h3>Kindly fill in hours worked</h3>
-    <Button onClick={handleSignOut}>Logout</Button>
+    <div className='dash-main'>
+        <h3> Welcome to {user.displayName}s'Dash Board</h3>
+           
+            <br></br>
+           <h4>  Good Day {user.displayName}  its {today}{check()} </h4> 
+            <h4>Kindly fill in hours worked</h4>
+        {/* <Button onClick={handleSignOut}>Logout</Button> */}
 
  
 
@@ -115,49 +115,33 @@ const Dashboard = () => {
             />
         </div>
 
-        {/* <div className="form-row">
-            <div className="form-group col-md-6">
-            <label htmlFor="inputCity">City</label>
-            <input type="text" className="form-control" id="inputCity" />
-            </div>
-            
-            <div className="form-group col-md-4">
-            <label htmlFor="inputState">State</label>
-            <select id="inputState" className="form-control">
-                <option selected="">Choose...</option>
-                <option>...</option>
-            </select>
-            </div>
-            <div className="form-group col-md-2">
-            <label htmlFor="inputZip">Zip</label>
-            <input type="text" className="form-control" id="inputZip" />
-            </div>
-        </div> */}
-
-        {/* <div className="form-group">
-            <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck" />
-            <label className="form-check-label" htmlFor="gridCheck">
-                Check me out
-            </label>
-            </div>
-        </div> */}
+       
 
         <button onClick = {createUser} type="submit" className="btn btn-primary">
             Submit
         </button>
-</div>
+    </div>
 
-{users.map((user) => {
-            return <div>
-                 <h3>Name: {user.name}</h3>
-                 <h3>Position: {user.position}</h3>
-                 <h3>Hours worked: {user.hours}</h3>
-                 </div>
-    })}
+        
+                 <h3 className='work'>Employee work hours </h3>
+       
+        <div className='results'>
+          
+            
 
+            {users.map((user) => {
+                        return <div className='results2'>
+                            <h3>Name: {user.name}</h3>
+                            <h3>Position: {user.position}</h3>
+                            <h3>Hours worked: {user.hours}</h3>
+                            </div>
+                })}
 
-    </>
+        </div>
+
+          
+
+    </div>
   )
 }
 

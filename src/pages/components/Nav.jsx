@@ -16,7 +16,7 @@ const Nav = () => {
   }
 
   return (
-    <div>
+    <div className='navmain'>
         <Navbar className='nav'>
         <Container className='navhome'>
             <Navbar.Brand><Link to="/">Home</Link></Navbar.Brand>
