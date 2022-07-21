@@ -2,14 +2,25 @@ import { Button } from 'react-bootstrap';
 import { UserAuth } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom';
 import { useState,useEffect } from 'react';
- import { collection, doc, getDocs } from 'firebase/firestore';
+ import { collection, doc, getDocs,addDoc } from 'firebase/firestore';
 import { db } from "../firebase"
 
 
 const Dashboard = () => {
+    const [userName, setUserName] = useState('')
+    const [userPosition, setUserPosition] = useState('')
+    const [userHours, setUserHours] = useState('')
 
     const [ users, setUsers] = useState([])
     const usersRef = collection(db, "users")
+
+    const createUser = async () => {
+        await addDoc(usersRef, {
+            name : userName,
+            position: userPosition, 
+            hours: userHours
+        })
+    }
     
     useEffect(() => {
         const getUsers =  async () => {
@@ -77,6 +88,8 @@ const Dashboard = () => {
             className="form-control"
             id="name"
             placeholder="name"
+            onChange ={(e)=> {
+                setUserName(e.target.value)}}
             />
         </div>
         <div className="form-group">
@@ -86,15 +99,19 @@ const Dashboard = () => {
             className="form-control"
             id="position"
             placeholder="Position"
+            onChange ={(e)=> {
+                setUserPosition(e.target.value)}}
             />
         </div>
         <div className="form-group">
             <label htmlFor="inputAddress2">Hours worked</label>
             <input
-            type="text"
+            type="number"
             className="form-control"
             id="hoursworked"
             placeholder="Hours worked"
+            onChange ={(e)=> {
+                setUserHours(e.target.value)}}
             />
         </div>
 
@@ -126,7 +143,7 @@ const Dashboard = () => {
             </div>
         </div> */}
 
-        <button type="submit" className="btn btn-primary">
+        <button onClick = {createUser} type="submit" className="btn btn-primary">
             Submit
         </button>
 </div>
