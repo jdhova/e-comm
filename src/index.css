@@ -13,19 +13,19 @@
 }
 
 .navhome {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-top: 5%;
   font-size: 20px;
 
   max-width: 100%;
-  
+   */
 }
 
 .nav-main {
   background-color: aqua;
-  height: 100px;
+  /* height: 100px; */
 }
 
 
@@ -129,12 +129,38 @@
  background-color: aquamarine;
 }
 
+.navhome {
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  list-style: none;
+  text-decoration: none;
+  padding-left:150px ;
+  padding-right:150px ;
+ 
+}
 
-/* .navhome Link{
-  list-style-type: none;
-  padding-left: 40px;
-  font-size: 20px;
-} */
+
+@media only screen and (max-width: 667px) {
+
+  .navhome {
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: space-between; */
+    list-style: none;
+    padding-left:100px ;
+    padding-right:100px ;
+  }
+
+  .nav-main {
+    background-color: aqua;
+    /* height: 100vh; */
+  }
+  
+  
+
+}
+
 
 
 

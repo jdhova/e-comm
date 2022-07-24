@@ -19,9 +19,14 @@ const Nav = () => {
     <div className='navmain'>
         <Navbar className='nav'>
         <Container className='navhome'>
-            <Navbar.Brand><Link to="/">Home</Link></Navbar.Brand>
+          
+          <div className='nav-home'>
+          <Navbar.Brand><Link to="/">Home</Link></Navbar.Brand>
             <Navbar.Toggle />
-            <Navbar.Collapse className="justify-content-end"> 
+          </div>
+
+          <div className='nav-signin'>
+          <Navbar.Collapse className="justify-content-end"> 
             <Navbar.Text>
                 <ul className='nav'>
                 {user?.email ? (
@@ -33,6 +38,21 @@ const Nav = () => {
                 </ul>
             </Navbar.Text>
             </Navbar.Collapse>
+          </div>
+            {/* <Navbar.Brand><Link to="/">Home</Link></Navbar.Brand>
+            <Navbar.Toggle /> */}
+            {/* <Navbar.Collapse className="justify-content-end"> 
+            <Navbar.Text>
+                <ul className='nav'>
+                {user?.email ? (
+                      <Button onClick={handleSignOut}>Logout</Button>
+                    ) : (
+                      <Link to='/signin'>Sign in</Link>
+                    )}
+
+                </ul>
+            </Navbar.Text>
+            </Navbar.Collapse> */}
         </Container>
         </Navbar>
        
