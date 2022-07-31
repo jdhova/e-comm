@@ -27,4 +27,4 @@ Full stack application which where employees can log in with google auth and fil
 
 ### Side Ract.js + Firebase
 
-![FLEXX](public/FLXX.png)
+![FLEXX](public/FLEXX.png)
