@@ -28,3 +28,4 @@ Full stack application which where employees can log in with google auth and fil
 ### Side Ract.js + Firebase
 
 ![FLEXX](public/FLEXX.png)
+[TRELLO BOARD](https://trello.com/b/k0ReEM0o/e-commerce-full-stack-application)
