@@ -25,12 +25,12 @@ Full stack application which where employees can log in with google auth and fil
 
 ### Frame work used
 
-### Side Ract.js + Firebase
+### Ract.js + Firebase
 
-#### App Image landing page
+### App Image landing page
 
 ![FLEXX](public/FLEXX.png)
 
-#### Treo Board Link
+### Treo Board Link
 
 [Trello Board Link](https://trello.com/b/k0ReEM0o/e-commerce-full-stack-application)
