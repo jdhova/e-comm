@@ -31,6 +31,10 @@ Full stack application which where employees can log in with google auth and fil
 
 ![FLEXX](public/FLEXX.png)
 
+### FIREBASE Deployed Link
+
+[Deployed Link](https://e-comm-6609c.web.app/)
+
 ### Treo Board Link
 
 [Trello Board Link](https://trello.com/b/k0ReEM0o/e-commerce-full-stack-application)
